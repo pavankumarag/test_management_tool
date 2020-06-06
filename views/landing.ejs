@@ -1,0 +1,110 @@
+<%- include('partials/header') %>
+<%- include('partials/base-start') %>
+
+
+<br />
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      List specific Category
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">All</a>
+      <a class="dropdown-item" href="#">Risk Control</a>
+      <a class="dropdown-item" href="#">Fraud Check</a>
+      <a class="dropdown-item" href="#">Android</a>
+      <a class="dropdown-item" href="#">MIS Reports</a>
+      <a class="dropdown-item" href="#">LMS</a>
+    </div>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Testcase</button>
+  </div>
+
+  <br />
+  Total testcases 
+  <br />
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Test case Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Category</th>
+        <th scope="col">Execution Steps</th>
+        <th scope="col">Expected Result</th>
+        <th scope="col">Automation</th>
+      </tr>
+    </thead>
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Test Case</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" action="/addtestcase">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test case Name</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="test_name"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test case Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="test_desc"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Priority</label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="priority">
+                    <option>P0</option>
+                    <option>P1</option>
+                    <option>P2</option>
+                    <option>P3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Category</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="category">
+                      <option>Risk Control</option>
+                      <option>Fraud Check</option>
+                      <option>Android</option>
+                      <option>LMS</option>
+                      <option>MIS Report</option>
+                      <option>Enach</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Steps</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="steps"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Expected Result</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="expected_result"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Automated</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="automated">
+                      <option>Functional</option>
+                      <option>Unit Test</option>
+                      <option>No</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+
+<%- include('partials/base-end') %>
+<%- include('partials/footer') %>

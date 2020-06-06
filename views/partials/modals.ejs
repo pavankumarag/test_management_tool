@@ -1,0 +1,87 @@
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Test Case</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" action="/addtestcase">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test case Name</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="test_name"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Test case Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="test_desc"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Priority</label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="priority">
+                    <option>P0</option>
+                    <option>P1</option>
+                    <option>P2</option>
+                    <option>P3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Category</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="category">
+                      <option>Risk Control</option>
+                      <option>Fraud Check</option>
+                      <option>Android</option>
+                      <option>LMS</option>
+                      <option>MIS Report</option>
+                      <option>Enach</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Steps</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="steps"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Expected Result</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="expected_result"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Automated</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="automated">
+                      <option>Functional</option>
+                      <option>Unit Test</option>
+                      <option>No</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
+            <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <p class="text-center h4">Are you sure to delete selected row?</p>
+
+          </div>
+          <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
+            <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-primary btnNoClass" id="btnNo" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+</div>
